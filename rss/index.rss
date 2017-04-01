@@ -1,4 +1,170 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Tue, 21 Mar 2017 01:40:46 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Code Book - Test page 2</title><description>&lt;h1 id="codebook"&gt;Code Book&lt;/h1&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 01 Apr 2017 01:59:00 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Machine learning week 3 - Logistic Regression</title><description>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.&lt;/li&gt;
+&lt;li&gt;The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.&lt;/li&gt;&lt;/ul&gt;</description><link>http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/</link><guid isPermaLink="false">84af78c4-942e-43ea-a27b-03bfe842ce84</guid><category>machine learning</category><dc:creator>Dong Liang</dc:creator><pubDate>Fri, 24 Mar 2017 07:45:34 GMT</pubDate><content:encoded>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.&lt;/li&gt;
+&lt;li&gt;The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.&lt;/li&gt;
+&lt;li&gt;The decision boundary acquired by setting h(theta) to be zero aides the understanding of internal logistic classification that could be reflected as a visual boundary line or area on a 2-D plot.&lt;/li&gt;
+&lt;li&gt;Because of the multi-optima/non-convex nature of logistic regression model that complicates the gradient descent processing, its cost function uses an alternative conditional algorithmic implementation other than the one for linear regression model.&lt;/li&gt;
+&lt;li&gt;One may consider using advanced optimization algorithms (requiring inputs of J(theta) and gradient) and benefit from speedy and cost-efficient processing of parameter optimization.&lt;/li&gt;
+&lt;li&gt;Multiple-class classification can be simplified as one vs all logistic regression classification that returns a probability that a given input x is categorized to certain class under each scenario.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title>Machine learning week 5 - Neural Networks: Learning</title><description>&lt;h3 id="costfunction"&gt;Cost Function&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Neural network model&lt;/strong&gt;
+&lt;img src="http://7d9rd6.com1.z0.glb.clouddn.com/wp-content/uploads/2016/04/scrn20160408215047.png" alt="neural network"&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's first define a few variables that we will need to use:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;L = total number of layers in the network&lt;/li&gt;
+&lt;li&gt;sl = number of units (not counting bias unit) in layer l&lt;/li&gt;
+&lt;li&gt;K = number of output units/classes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;Cost function&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-24-at-1.54.34-AM.png" alt="cost function"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the double sum simply adds&lt;/li&gt;&lt;/ul&gt;</description><link>http://localhost:2368/2017/03/24/machine-learning-week-5-neural-networks-learning-2/</link><guid isPermaLink="false">b5bfcae8-169d-42f7-af26-3d0162d7654b</guid><category>machine learning</category><dc:creator>Dong Liang</dc:creator><pubDate>Fri, 24 Mar 2017 07:41:30 GMT</pubDate><content:encoded>&lt;h3 id="costfunction"&gt;Cost Function&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Neural network model&lt;/strong&gt;
+&lt;img src="http://7d9rd6.com1.z0.glb.clouddn.com/wp-content/uploads/2016/04/scrn20160408215047.png" alt="neural network"&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's first define a few variables that we will need to use:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;L = total number of layers in the network&lt;/li&gt;
+&lt;li&gt;sl = number of units (not counting bias unit) in layer l&lt;/li&gt;
+&lt;li&gt;K = number of output units/classes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;Cost function&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-24-at-1.54.34-AM.png" alt="cost function"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the double sum simply adds up the logistic regression costs calculated for each cell in the output layer&lt;/li&gt;
+&lt;li&gt;the triple sum simply adds up the squares of all the individual Θs in the entire network.&lt;/li&gt;
+&lt;li&gt;the i in the triple sum does not refer to training example i&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="backpropagationalgorithm"&gt;Backpropagation Algorithm&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;"Backpropagation" is neural-network terminology for minimizing our cost function. The goal of Backpropagation is to minimize J(theta) - the cost function of NN, using an optimal set of parameters in theta: namely minΘJ(Θ).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Backpropagation Intuition&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-31-at-3.35.53-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;*The δ(l)j is the error for a(l)j, expressed as the derivative of the cost function.The derivative is the slope of a line tangent to the cost fucntion, so the steeper the slope the more incorrect we are. *&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/qc309rdcEea4MxKdJPaTxA_324034f1a3c3a3be8e7c6cfca90d3445_fixx.png?expiry=1491091200000&amp;amp;hmac=xP_kro6Z8DjXgkDS6Fldh99xn4GgBdcP0ffsNj7UUMs" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;In the image above, to calculate δ(2)2, we multiply the weights Θ(2)12 and Θ(2)22 by their respective δ values found to the right of each edge. So we get δ(2)2= Θ(2)12&lt;em&gt;δ(3)1+Θ(2)22&lt;/em&gt;δ(3)2. To calculate every single possible δ(l)j, we could start from the right of our diagram. We can think of our edges as our Θij. Going from right to left, to calculate the value of δ(l)j, you can just take the over all sum of each weight times the δ it is coming from. Hence, another example would be δ(3)2=Θ(3)12*δ(4)1.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="unrollingparameters"&gt;Unrolling Parameters&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It becomes more convenient when the theta or gradient parameters are packed into a bigger matrix, facilitating the vectorized operations. &lt;/li&gt;
+&lt;li&gt;Unrolling matrix of parameters and putting them into one long vector before using the optimizing function such as fminunc(). &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/kdK7ubT2EeajLxLfjQiSjg_d35545b8d6b6940e8577b5a8d75c8657_Screenshot-2016-11-27-15.09.24.png?expiry=1491004800000&amp;amp;hmac=qh2Gn1mRQ-khB5O2476dP0dkmXPypNn46ODoxmTmvHM" alt=""&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="gradientchecking"&gt;Gradient Checking&lt;/h3&gt;
+
+&lt;p&gt;Gradient Checking is designed to ensure that the deltaVector function works as intended. We can approximate the derivative of the cost function J(theta). &lt;/p&gt;
+
+&lt;p&gt;The approximation can be implemented by adding or subtracting epsilon to the theta matrix, as shown in octave codes as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;epsilon = 1e-4;  
+for i = 1:n,  
+  thetaPlus = theta;
+  thetaPlus(i) += epsilon;
+  thetaMinus = theta;
+  thetaMinus(i) -= epsilon;
+  gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)
+end;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="randominitialization"&gt;Random Initialization&lt;/h3&gt;
+
+&lt;p&gt;The use of all-zero matrix for parameters initialization would result in repeated updating to the same values in all nodes during backpropagation. Random initialization of weights for theta matrix circumvent the problem of symmetry breaking.&lt;/p&gt;
+
+&lt;p&gt;Initializing weights with zeros for theta matrix doesn't work with neural network. When we backpropogate, the optimal values will update to the same values for all nodes. &lt;/p&gt;
+
+&lt;p&gt;Briefly, we initialize each theta with a random value between [-epsilon , epsilon]. Using this formula guarantees that we get the desired bound. We can apply the same technique to multi-dimentional J(theta) matrix. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.
+
+Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="puttingittogether"&gt;Putting it Together&lt;/h3&gt;
+
+&lt;p&gt;First, pick a network architecture; choose the layout of your neural network, including how many hidden units in each layer and how many layers in total you want to have.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Number of input units = dimension of features x(i)&lt;/li&gt;
+&lt;li&gt;Number of output units = number of classes&lt;/li&gt;
+&lt;li&gt;Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)&lt;/li&gt;
+&lt;li&gt;Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Training a Neural Network&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Randomly initialize the weights  &lt;/li&gt;
+&lt;li&gt;Implement forward propagation to get hΘ(x(i)) for any x(i)  &lt;/li&gt;
+&lt;li&gt;Implement the cost function  &lt;/li&gt;
+&lt;li&gt;Implement backpropagation to compute partial derivatives  &lt;/li&gt;
+&lt;li&gt;Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.  &lt;/li&gt;
+&lt;li&gt;Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;for i = 1:m,  
+   Perform forward propagation and backpropagation using example (x(i),y(i))
+   (Get activations a(l) and delta terms d(l) for l = 2,...,L
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The codes showing an intuition of how gradient descent works as we are implementing our neural network. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/hGk18LsaEea7TQ6MHcgMPA_8de173808f362583eb39cdd0c89ef43e_Screen-Shot-2016-12-05-at-10.40.35-AM.png?expiry=1491091200000&amp;amp;hmac=HbE_ZEpKeYD2TltrrYVU5OxTmXQd83nuso-WkozYsoM" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The NN algorithm keeps iterating the data pool until it reaches local minimas where hΘ(x(i)) ~= y(i). The optimization process, as the the cost function is not convex, will generally results in local minimum instead of global minimum that causes trivial effect that is normally neglectable.&lt;/p&gt;</content:encoded></item><item><title>Bayes factors</title><description>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In statistics, the use of &lt;em&gt;Bayes factors&lt;/em&gt; is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/03/22/bayes-factors/</link><guid isPermaLink="false">64a43306-22f2-4caa-8042-979a0dcef444</guid><category>读书笔记</category><dc:creator>Dong Liang</dc:creator><pubDate>Wed, 22 Mar 2017 19:22:06 GMT</pubDate><content:encoded>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In statistics, the use of &lt;em&gt;Bayes factors&lt;/em&gt; is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify the support for a model over another, regardless of whether these models are correct.[4] The technical definition of "support" in the context of Bayesian inference is described below.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://people.stat.sc.edu/Hitchcock/stat535slidesday20.pdf"&gt;The Bayes Factor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.stat.cmu.edu/~kass/papers/bayesfactors.pdf"&gt;Applications&lt;/a&gt; &lt;/p&gt;</content:encoded></item><item><title>Code Book - Test page 2</title><description>&lt;h1 id="codebook"&gt;Code Book&lt;/h1&gt;
 
 &lt;h2 id="datasource"&gt;Data Source&lt;/h2&gt;
 
