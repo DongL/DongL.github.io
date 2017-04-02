@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 01 Apr 2017 15:44:59 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Machine learning week 3 - Logistic Regression</title><description>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 02 Apr 2017 01:17:51 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Machine learning week 3 - Logistic Regression</title><description>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.&lt;/li&gt;
@@ -149,11 +149,15 @@ Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;
    (Get activations a(l) and delta terms d(l) for l = 2,...,L
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The codes showing an intuition of how gradient descent works as we are implementing our neural network. &lt;/p&gt;
-
 &lt;p&gt;&lt;img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/hGk18LsaEea7TQ6MHcgMPA_8de173808f362583eb39cdd0c89ef43e_Screen-Shot-2016-12-05-at-10.40.35-AM.png?expiry=1491091200000&amp;amp;hmac=HbE_ZEpKeYD2TltrrYVU5OxTmXQd83nuso-WkozYsoM" alt=""&gt;&lt;/p&gt;
 
-&lt;p&gt;The gradient descent algorithm keeps iterating and exploring the data pool until it reaches a local minimum where hΘ(x(i)) ~= y(i). The optimization process, as the the cost function is not convex, could only result in local minimum instead getting to the global optimum, but it in practice normally doesn't cause huge problem.&lt;/p&gt;</content:encoded></item><item><title>Bayes factors</title><description>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
+&lt;p&gt;The image shows an intuition of how gradient descent works as we are implementing our neural network. The gradient descent algorithm keeps iterating and exploring the data pool until it reaches a local minimum where hΘ(x(i)) ~= y(i). The optimization process, as the the cost function is not convex, could only result in local minimum instead getting to the global optimum, but it normally doesn't cause huge problem in practice.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="summarization"&gt;Summarization&lt;/h3&gt;
+
+&lt;p&gt;1&lt;/p&gt;</content:encoded></item><item><title>Bayes factors</title><description>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;In statistics, the use of &lt;em&gt;Bayes factors&lt;/em&gt; is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/03/22/bayes-factors/</link><guid isPermaLink="false">64a43306-22f2-4caa-8042-979a0dcef444</guid><category>读书笔记</category><dc:creator>Dong Liang</dc:creator><pubDate>Wed, 22 Mar 2017 19:22:06 GMT</pubDate><content:encoded>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
