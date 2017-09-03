@@ -1,0 +1,213 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Machine learning week 3 - Logistic Regression</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=1fac411c34">
+
+
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Dong Liang's Blog">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Machine learning week 3 - Logistic Regression">
+    <meta property="og:description" content="Summarize the lesson (Logistic Regression) Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1. The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.">
+    <meta property="og:url" content="http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/">
+    <meta property="article:published_time" content="2017-03-24T07:45:34.000Z">
+    <meta property="article:modified_time" content="2017-03-24T07:45:40.000Z">
+    <meta property="article:tag" content="machine learning">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Machine learning week 3 - Logistic Regression">
+    <meta name="twitter:description" content="Summarize the lesson (Logistic Regression) Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1. The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.">
+    <meta name="twitter:url" content="http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Dong Liang">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="machine learning">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Dong Liang&#x27;s Blog",
+        "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Dong Liang",
+        "url": "http://localhost:2368/author/dong/",
+        "sameAs": []
+    },
+    "headline": "Machine learning week 3 - Logistic Regression",
+    "url": "http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/",
+    "datePublished": "2017-03-24T07:45:34.000Z",
+    "dateModified": "2017-03-24T07:45:40.000Z",
+    "keywords": "machine learning",
+    "description": "Summarize the lesson (Logistic Regression) Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1. The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../../../../shared/ghost-url.js?v=1fac411c34"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "25d5f7346569"
+});
+</script>
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Dong Liang's Blog" href="../../../../rss/index.html">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/github.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class="post-template tag-machine-learning nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="../../../../">Home</a></li>
+            <li class="nav-machine-learning"><a href="../../../../tag/machine-learning/">Machine Learning</a></li>
+    </ul>
+        <a class="subscribe-button" href="../../../../subscribe/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-machine-learning">
+
+        <header class="post-header">
+            <h1 class="post-title">Machine learning week 3 - Logistic Regression</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-03-24">24 March 2017</time>  on <a href="../../../../tag/machine-learning/">machine learning</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h5 id="summarizethelessonlogisticregression"><strong>Summarize the lesson (Logistic Regression)</strong></h5>
+
+<ul>
+<li>Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.</li>
+<li>The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.</li>
+<li>The decision boundary acquired by setting h(theta) to be zero aides the understanding of internal logistic classification that could be reflected as a visual boundary line or area on a 2-D plot.</li>
+<li>Because of the multi-optima/non-convex nature of logistic regression model that complicates the gradient descent processing, its cost function uses an alternative conditional algorithmic implementation other than the one for linear regression model.</li>
+<li>One may consider using advanced optimization algorithms (requiring inputs of J(theta) and gradient) and benefit from speedy and cost-efficient processing of parameter optimization.</li>
+<li>Multiple-class classification can be simplified as one vs all logistic regression classification that returns a probability that a given input x is categorized to certain class under each scenario.</li>
+</ul>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../../../../author/dong/">Dong Liang</a></h4>
+
+                    <p>Read <a href="../../../../author/dong/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Machine%20learning%20week%203%20-%20Logistic%20Regression&amp;url=http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            <section class="gh-subscribe">
+                <h3 class="gh-subscribe-title">Subscribe to Dong Liang's Blog</h3>
+                <p>Get the latest posts delivered right to your inbox.</p>
+                <form method="post" action="../../../../subscribe/index.html" class="">
+    <input class="confirm" type="hidden" name="confirm"><input class="location" type="hidden" name="location"><input class="referrer" type="hidden" name="referrer">
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email" placeholder="Your email address">
+    </div>
+    <button class="" type="submit">Subscribe</button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+
+                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/http://localhost:2368/rss/">via RSS</a> with Feedly!</span>
+            </section>
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story no-cover" href="../../../09/03/untitled-2/">
+        <section class="post">
+            <h2>Deep learning</h2>
+            <p>Matrix multiplication : The inner product of matrix is an alternative to For loop: it concerns the process of element…</p>
+        </section>
+    </a>
+    <a class="read-next-story prev no-cover" href="../machine-learning-week-5-neural-networks-learning-2/">
+        <section class="post">
+            <h2>Machine learning week 5 - Neural Networks: Learning</h2>
+            <p>Cost Function Neural network model Let's first define a few variables that we will need to use: L = total…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="../../../../">Dong Liang's Blog</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/github.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=1fac411c34"></script>
+    <script type="text/javascript" src="../../../../assets/js/index.js?v=1fac411c34"></script>
+
+</body>

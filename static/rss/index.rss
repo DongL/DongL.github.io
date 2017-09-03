@@ -1,0 +1,434 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 03 Sep 2017 03:57:13 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Workflow of ghost for updating posts on GitHub</title><description>&lt;ul&gt;
+&lt;li&gt;Go into my ghost installation and:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;npm start  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Then go to &lt;a href="http://127.0.0.1:2368/ghost"&gt;http://127.0.0.1:2368/ghost&lt;/a&gt; and write a new post.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Then go into my static pages folder root (not into the static directory) and run under root privilege:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;buster generate --domain=&lt;a href="http://127.0.0.1:2368"&gt;http://127.0.0.1:2368&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/09/03/workflow-of-ghost-for-updating-posts-on-github/</link><guid isPermaLink="false">171cde0e-f9d9-4c7b-8575-51c37f9fd360</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 03:53:59 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;Go into my ghost installation and:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;npm start  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Then go to &lt;a href="http://127.0.0.1:2368/ghost"&gt;http://127.0.0.1:2368/ghost&lt;/a&gt; and write a new post.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Then go into my static pages folder root (not into the static directory) and run under root privilege:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;buster generate --domain=&lt;a href="http://127.0.0.1:2368"&gt;http://127.0.0.1:2368&lt;/a&gt; &lt;br&gt;
+  cd static &lt;br&gt;
+  git add . &lt;br&gt;
+  git commit -m 'Initial commit' &lt;br&gt;
+  git push  &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Check site to see if it updated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;source: &lt;a href="http://briank.im/i-see-ghosts/"&gt;http://briank.im/i-see-ghosts/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Deep learning</title><description>&lt;p&gt;&lt;strong&gt;Matrix multiplication&lt;/strong&gt; : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;</description><link>http://localhost:2368/2017/09/03/untitled-2/</link><guid isPermaLink="false">f3f7801a-7689-4795-8e13-61593f344272</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 03:24:18 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;Matrix multiplication&lt;/strong&gt; : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;</content:encoded></item><item><title>Machine learning week 3 - Logistic Regression</title><description>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.&lt;/li&gt;
+&lt;li&gt;The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.&lt;/li&gt;&lt;/ul&gt;</description><link>http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/</link><guid isPermaLink="false">84af78c4-942e-43ea-a27b-03bfe842ce84</guid><category>machine learning</category><dc:creator>Dong Liang</dc:creator><pubDate>Fri, 24 Mar 2017 07:45:34 GMT</pubDate><content:encoded>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.&lt;/li&gt;
+&lt;li&gt;The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.&lt;/li&gt;
+&lt;li&gt;The decision boundary acquired by setting h(theta) to be zero aides the understanding of internal logistic classification that could be reflected as a visual boundary line or area on a 2-D plot.&lt;/li&gt;
+&lt;li&gt;Because of the multi-optima/non-convex nature of logistic regression model that complicates the gradient descent processing, its cost function uses an alternative conditional algorithmic implementation other than the one for linear regression model.&lt;/li&gt;
+&lt;li&gt;One may consider using advanced optimization algorithms (requiring inputs of J(theta) and gradient) and benefit from speedy and cost-efficient processing of parameter optimization.&lt;/li&gt;
+&lt;li&gt;Multiple-class classification can be simplified as one vs all logistic regression classification that returns a probability that a given input x is categorized to certain class under each scenario.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title>Machine learning week 5 - Neural Networks: Learning</title><description>&lt;h3 id="costfunction"&gt;Cost Function&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Neural network model&lt;/strong&gt;
+&lt;img src="http://7d9rd6.com1.z0.glb.clouddn.com/wp-content/uploads/2016/04/scrn20160408215047.png" alt="neural network"&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's first define a few variables that we will need to use:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;L = total number of layers in the network&lt;/li&gt;
+&lt;li&gt;sl = number of units (not counting bias unit) in layer l&lt;/li&gt;
+&lt;li&gt;K = number of output units/classes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;Cost function&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-24-at-1.54.34-AM.png" alt="cost function"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the double sum simply adds&lt;/li&gt;&lt;/ul&gt;</description><link>http://localhost:2368/2017/03/24/machine-learning-week-5-neural-networks-learning-2/</link><guid isPermaLink="false">b5bfcae8-169d-42f7-af26-3d0162d7654b</guid><category>machine learning</category><dc:creator>Dong Liang</dc:creator><pubDate>Fri, 24 Mar 2017 07:41:30 GMT</pubDate><content:encoded>&lt;h3 id="costfunction"&gt;Cost Function&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Neural network model&lt;/strong&gt;
+&lt;img src="http://7d9rd6.com1.z0.glb.clouddn.com/wp-content/uploads/2016/04/scrn20160408215047.png" alt="neural network"&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's first define a few variables that we will need to use:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;L = total number of layers in the network&lt;/li&gt;
+&lt;li&gt;sl = number of units (not counting bias unit) in layer l&lt;/li&gt;
+&lt;li&gt;K = number of output units/classes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;Cost function&lt;/strong&gt;&lt;/mark&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-24-at-1.54.34-AM.png" alt="cost function"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the double sum simply adds up the logistic regression costs calculated for each cell in the output layer&lt;/li&gt;
+&lt;li&gt;the triple sum simply adds up the squares of all the individual Θs in the entire network.&lt;/li&gt;
+&lt;li&gt;the i in the triple sum does not refer to training example i&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="backpropagationalgorithm"&gt;Backpropagation Algorithm&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;"Backpropagation" is neural-network terminology for minimizing our cost function. The goal of Backpropagation is to minimize J(theta) - the cost function of NN, using an optimal set of parameters in theta: namely minΘJ(Θ).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Backpropagation Intuition&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-31-at-3.35.53-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;*The δ(l)j is the error for a(l)j, expressed as the derivative of the cost function.The derivative is the slope of a line tangent to the cost fucntion, so the steeper the slope the more incorrect we are. *&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/qc309rdcEea4MxKdJPaTxA_324034f1a3c3a3be8e7c6cfca90d3445_fixx.png?expiry=1491091200000&amp;amp;hmac=xP_kro6Z8DjXgkDS6Fldh99xn4GgBdcP0ffsNj7UUMs" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;In the image above, to calculate δ(2)2, we multiply the weights Θ(2)12 and Θ(2)22 by their respective δ values found to the right of each edge. So we get δ(2)2= Θ(2)12&lt;em&gt;δ(3)1+Θ(2)22&lt;/em&gt;δ(3)2. To calculate every single possible δ(l)j, we could start from the right of our diagram. We can think of our edges as our Θij. Going from right to left, to calculate the value of δ(l)j, you can just take the over all sum of each weight times the δ it is coming from. Hence, another example would be δ(3)2=Θ(3)12*δ(4)1.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="unrollingparameters"&gt;Unrolling Parameters&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It becomes more convenient when the theta or gradient parameters are packed into a bigger matrix, facilitating the vectorized operations. &lt;/li&gt;
+&lt;li&gt;Unrolling matrix of parameters and putting them into one long vector before using the optimizing function such as fminunc(). &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/kdK7ubT2EeajLxLfjQiSjg_d35545b8d6b6940e8577b5a8d75c8657_Screenshot-2016-11-27-15.09.24.png?expiry=1491004800000&amp;amp;hmac=qh2Gn1mRQ-khB5O2476dP0dkmXPypNn46ODoxmTmvHM" alt=""&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="gradientchecking"&gt;Gradient Checking&lt;/h3&gt;
+
+&lt;p&gt;Gradient Checking is designed to ensure that the deltaVector function works as intended. We can approximate the derivative of the cost function J(theta). &lt;/p&gt;
+
+&lt;p&gt;The approximation can be implemented by adding or subtracting epsilon to the theta matrix, as shown in octave codes as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;epsilon = 1e-4;  
+for i = 1:n,  
+  thetaPlus = theta;
+  thetaPlus(i) += epsilon;
+  thetaMinus = theta;
+  thetaMinus(i) -= epsilon;
+  gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)
+end;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="randominitialization"&gt;Random Initialization&lt;/h3&gt;
+
+&lt;p&gt;The use of all-zero matrix for parameters initialization would result in repeated updating to the same values in all nodes during backpropagation. Random initialization of weights for theta matrix circumvent the problem of symmetry breaking.&lt;/p&gt;
+
+&lt;p&gt;Initializing weights with zeros for theta matrix doesn't work with neural network. When we backpropogate, the optimal values will update to the same values for all nodes. &lt;/p&gt;
+
+&lt;p&gt;Briefly, we initialize each theta with a random value between [-epsilon , epsilon]. Using this formula guarantees that we get the desired bound. We can apply the same technique to multi-dimentional J(theta) matrix. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.
+
+Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="puttingittogether"&gt;Putting it Together&lt;/h3&gt;
+
+&lt;p&gt;First, pick a network architecture; choose the layout of your neural network, including how many hidden units in each layer and how many layers in total you want to have.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Number of input units = dimension of features x(i)&lt;/li&gt;
+&lt;li&gt;Number of output units = number of classes&lt;/li&gt;
+&lt;li&gt;Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)&lt;/li&gt;
+&lt;li&gt;Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Training a Neural Network&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Randomly initialize the weights  &lt;/li&gt;
+&lt;li&gt;Implement forward propagation to get hΘ(x(i)) for any x(i)  &lt;/li&gt;
+&lt;li&gt;Implement the cost function  &lt;/li&gt;
+&lt;li&gt;Implement backpropagation to compute partial derivatives  &lt;/li&gt;
+&lt;li&gt;Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.  &lt;/li&gt;
+&lt;li&gt;Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;for i = 1:m,  
+   Perform forward propagation and backpropagation using example (x(i),y(i))
+   (Get activations a(l) and delta terms d(l) for l = 2,...,L
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/hGk18LsaEea7TQ6MHcgMPA_8de173808f362583eb39cdd0c89ef43e_Screen-Shot-2016-12-05-at-10.40.35-AM.png?expiry=1491091200000&amp;amp;hmac=HbE_ZEpKeYD2TltrrYVU5OxTmXQd83nuso-WkozYsoM" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The image shows an intuition of how gradient descent works as we are implementing our neural network. The gradient descent algorithm keeps iterating and exploring the data pool until it reaches a local minimum where hΘ(x(i)) ~= y(i). The optimization process, as the the cost function is not convex, could only result in local minimum instead getting to the global optimum, but it normally doesn't cause huge problem in practice.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="summarization"&gt;Summarization&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cost function - J(theta)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.07.59-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;J = (1/m) .* sum ( sum ((-yk) .* log(h_theta)  -  (1-yk) .* log(1-h_theta) )) + ...  
+    lambda ./ (2 * m)  .* (sum(sum(Theta1(:, 2:end) .* Theta1(:, 2:end))) + ...
+    sum(sum(Theta2(:, 2:end) .* Theta2(:, 2:end))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Forward propagation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-7.00.04-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Backward propagation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.20.34-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The intuition behind the backward propagation can be described as: given dataset of training sample (Xt, Yt), we first calculate the activations of the whole neural network via forward propagation, including those for neural units in each hidden layer and of output value for h(theta). We then compute the error terms that reflect how much of that node was 'responsible' for any errors in our output. Concretely, for the output layer the error terms can be directly measured by subtracting actual value from network's activations. For the hidden units, the error terms in layer L can be computed based on weighted average of the error terms of the nodes in layer L + 1, that can be expressed as an equation that involves multiplication of matrix of theta, error terms of next layer and sigmoid gradient.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sigmoid gradient&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.15.56-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Random initialization&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% Randomly initialize the weights to small values
+% epsilon_init = sqrt(6)/(sqrt(L_in) + sqrt(L_out))
+epsilon init = 0.12;  
+W = rand(L out, 1 + L in) * 2 * epsilon init − epsilon init;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Backward propagation implementation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.49.30-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;1) Use loop function over training samples and compute the activations for each layer, namely values of z and a. Note that an all-one term needs be added to the vectors of activations to include the bias unit in each layer. &lt;/p&gt;
+
+&lt;p&gt;2) Calculate the delta value(errors) for output layer by measuring the difference between the activation and true value. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.37.16-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;3) Calculate the error terms, namely the delta value, for hidden layer as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.40.31-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;4) Compute the accumulated gradient for given sample using the following formulas, where the delta2_0 is skipped or removed. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.45.06-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;5) The gradient for the neural network cost function can then be obtained by dividing the accumulated gradients by 1/m:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.46.51-PM.png" alt=""&gt;&lt;/p&gt;</content:encoded></item><item><title>Bayes factors</title><description>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In statistics, the use of &lt;em&gt;Bayes factors&lt;/em&gt; is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/03/22/bayes-factors/</link><guid isPermaLink="false">64a43306-22f2-4caa-8042-979a0dcef444</guid><category>读书笔记</category><dc:creator>Dong Liang</dc:creator><pubDate>Wed, 22 Mar 2017 19:22:06 GMT</pubDate><content:encoded>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In statistics, the use of &lt;em&gt;Bayes factors&lt;/em&gt; is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify the support for a model over another, regardless of whether these models are correct.[4] The technical definition of "support" in the context of Bayesian inference is described below.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href="http://people.stat.sc.edu/Hitchcock/stat535slidesday20.pdf"&gt;The Bayes Factor&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.stat.cmu.edu/~kass/papers/bayesfactors.pdf"&gt;Applications&lt;/a&gt; &lt;/p&gt;</content:encoded></item><item><title>Code Book - Test page 2</title><description>&lt;h1 id="codebook"&gt;Code Book&lt;/h1&gt;
+
+&lt;h2 id="datasource"&gt;Data Source&lt;/h2&gt;
+
+&lt;p&gt;This code book is provided to  indicate all the variables and summaries calculated, along with units, and any other relevant information. The data used in this analysis was previously downloaded from the weblink as follows: &lt;a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" title="Smart phone dataset"&gt;Data source&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h2 id="datacollection"&gt;Data Collection&lt;/h2&gt;
+
+&lt;p&gt;A group of 30 volunteers at ages&lt;/p&gt;</description><link>http://localhost:2368/2017/03/19/code-book-test-page-2/</link><guid isPermaLink="false">2e1e7253-bcd0-49e4-a697-cbef7d1c3112</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 19 Mar 2017 21:52:05 GMT</pubDate><content:encoded>&lt;h1 id="codebook"&gt;Code Book&lt;/h1&gt;
+
+&lt;h2 id="datasource"&gt;Data Source&lt;/h2&gt;
+
+&lt;p&gt;This code book is provided to  indicate all the variables and summaries calculated, along with units, and any other relevant information. The data used in this analysis was previously downloaded from the weblink as follows: &lt;a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" title="Smart phone dataset"&gt;Data source&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h2 id="datacollection"&gt;Data Collection&lt;/h2&gt;
+
+&lt;p&gt;A group of 30 volunteers at ages ranging from 19 to 48 years old were enrolled in this video recorded experiment. Briefly, each individual was required to wear a Samsung Galaxy S II waist smartphone while performing six regular daily activities including WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING. At a constant rate of 50Hz, the 3-axial linear acceleration and 3-axial angular velocity were captured by Samsung smartphones using the embedded the accelerometer and gyroscope. The data were then manually labeled and according to the video recorded during the experiment. The final datasets were generated by randomly partitioning 70% of the volunteers into the training group and 30% of the rest into the test group. More info about the study can be retrieved from the &lt;a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" title="UCI machine learning repository"&gt;UCI machine learning repository&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="datasetinformation"&gt;Dataset Information&lt;/h2&gt;
+
+&lt;p&gt;The raw dataset includes the following files:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;'README.txt'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'features_info.txt': Shows information about the variables used on the feature vector.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'features.txt': List of all features.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'activity_labels.txt': Links the class labels with their activity name.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'train/X_train.txt': Training set.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'train/y_train.txt': Training labels.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'test/X_test.txt': Test set.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'test/y_test.txt': Test labels.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following files are available for the train and test data. Their descriptions are equivalent. &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'train/Inertial Signals/total&lt;em&gt;acc&lt;/em&gt;x&lt;em&gt;train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total&lt;/em&gt;acc&lt;em&gt;x&lt;/em&gt;train.txt' and 'total&lt;em&gt;acc&lt;/em&gt;z_train.txt' files for the Y and Z axis. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'train/Inertial Signals/body&lt;em&gt;acc&lt;/em&gt;x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;'train/Inertial Signals/body&lt;em&gt;gyro&lt;/em&gt;x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. &lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id="notes"&gt;Notes:  &lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Features are normalized and bounded within [-1,1].&lt;/li&gt;
+&lt;li&gt;Each feature vector is a row on the text file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more information about this dataset contact: activityrecognition@smartlab.ws&lt;/p&gt;
+
+&lt;h2 id="variablesandfeatureselection"&gt;Variables and Feature Selection&lt;/h2&gt;
+
+&lt;p&gt;The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. &lt;/p&gt;
+
+&lt;p&gt;Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). &lt;/p&gt;
+
+&lt;p&gt;Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). &lt;/p&gt;
+
+&lt;p&gt;These signals were used to estimate variables of the feature vector for each pattern: &lt;br&gt;
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;tBodyAcc-XYZ&lt;/li&gt;
+&lt;li&gt;tGravityAcc-XYZ&lt;/li&gt;
+&lt;li&gt;tBodyAccJerk-XYZ&lt;/li&gt;
+&lt;li&gt;tBodyGyro-XYZ&lt;/li&gt;
+&lt;li&gt;tBodyGyroJerk-XYZ&lt;/li&gt;
+&lt;li&gt;tBodyAccMag&lt;/li&gt;
+&lt;li&gt;tGravityAccMag&lt;/li&gt;
+&lt;li&gt;tBodyAccJerkMag&lt;/li&gt;
+&lt;li&gt;tBodyGyroMag&lt;/li&gt;
+&lt;li&gt;tBodyGyroJerkMag&lt;/li&gt;
+&lt;li&gt;fBodyAcc-XYZ&lt;/li&gt;
+&lt;li&gt;fBodyAccJerk-XYZ&lt;/li&gt;
+&lt;li&gt;fBodyGyro-XYZ&lt;/li&gt;
+&lt;li&gt;fBodyAccMag&lt;/li&gt;
+&lt;li&gt;fBodyAccJerkMag&lt;/li&gt;
+&lt;li&gt;fBodyGyroMag&lt;/li&gt;
+&lt;li&gt;fBodyGyroJerkMag&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The set of variables that were estimated from these signals are: &lt;br&gt;
+- mean(): Mean value
+- std(): Standard deviation&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;gravityMean&lt;/li&gt;
+&lt;li&gt;tBodyAccMean&lt;/li&gt;
+&lt;li&gt;tBodyAccJerkMean&lt;/li&gt;
+&lt;li&gt;tBodyGyroMean&lt;/li&gt;
+&lt;li&gt;tBodyGyroJerkMean&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other variables include subject and acitvity that denote the sample ID and the recorded acitvities respectively. Please find detailed data transformation info in the README document. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ghost.org/images/ghost-mobile-642x.png" alt=""&gt;&lt;/p&gt;</content:encoded></item><item><title>测试页面</title><description>&lt;p&gt;测试&lt;/p&gt;</description><link>http://localhost:2368/2017/03/19/ce-shi-ye-mian/</link><guid isPermaLink="false">59689540-a951-4a15-a42e-99a726a045fc</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 19 Mar 2017 20:11:49 GMT</pubDate><content:encoded>&lt;p&gt;测试&lt;/p&gt;</content:encoded></item><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>http://localhost:2368/2017/03/19/welcome-to-ghost/</link><guid isPermaLink="false">b56f35c8-f198-47f0-b922-56cb6c689528</guid><category>Getting Started</category><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 19 Mar 2017 08:00:11 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
+
+&lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!&lt;/p&gt;
+
+&lt;p&gt;Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use &lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Item number one&lt;/li&gt;
+&lt;li&gt;Item number two
+&lt;ul&gt;&lt;li&gt;A nested item&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A final item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or with numbers!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Remember to buy some milk  &lt;/li&gt;
+&lt;li&gt;Drink the milk  &lt;/li&gt;
+&lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="links"&gt;Links&lt;/h3&gt;
+
+&lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like &lt;a href="http://ghost.org"&gt;http://ghost.org&lt;/a&gt; - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to &lt;a href="http://ghost.org"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
+
+&lt;h3 id="whataboutimages"&gt;What about Images?&lt;/h3&gt;
+
+&lt;p&gt;Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo"&gt;&lt;/p&gt;
+
+&lt;p&gt;Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:&lt;/p&gt;
+
+&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
+
+&lt;p&gt;Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ghost - Just a blogging platform&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="workingwithcode"&gt;Working with Code&lt;/h3&gt;
+
+&lt;p&gt;Got a streak of geek? We've got you covered there, too. You can write inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.awesome-thing {
+    display: block;
+    width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="readyforabreak"&gt;Ready for a Break?&lt;/h3&gt;
+
+&lt;p&gt;Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="advancedusage"&gt;Advanced Usage&lt;/h3&gt;
+
+&lt;p&gt;There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.&lt;/p&gt;
+
+&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!"&gt;&lt;/p&gt;
+
+&lt;p&gt;That should be enough to get you started. Have fun - and let us know what you think :)&lt;/p&gt;</content:encoded></item></channel></rss>
