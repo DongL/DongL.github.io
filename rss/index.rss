@@ -1,4 +1,16 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 02 Apr 2017 01:17:51 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Machine learning week 3 - Logistic Regression</title><description>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 03 Sep 2017 03:41:44 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Deep learning terms</title><description>&lt;h3 id="matrixmultiplication"&gt;Matrix multiplication&lt;/h3&gt;
+
+&lt;p&gt;The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;
+
+&lt;h3 id="pandaslibrary"&gt;Pandas library&lt;/h3&gt;
+
+&lt;p&gt;The Pandas library&lt;/p&gt;</description><link>http://localhost:2368/2017/09/03/untitled-2/</link><guid isPermaLink="false">f3f7801a-7689-4795-8e13-61593f344272</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 03:24:18 GMT</pubDate><content:encoded>&lt;h3 id="matrixmultiplication"&gt;Matrix multiplication&lt;/h3&gt;
+
+&lt;p&gt;The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;
+
+&lt;h3 id="pandaslibrary"&gt;Pandas library&lt;/h3&gt;
+
+&lt;p&gt;The Pandas library is a functionally similar counterpart of R's dataframe or data.table in python programming environment. The underlying structure facilitate the data analysis and data &lt;/p&gt;</content:encoded></item><item><title>Machine learning week 3 - Logistic Regression</title><description>&lt;h5 id="summarizethelessonlogisticregression"&gt;&lt;strong&gt;Summarize the lesson (Logistic Regression)&lt;/strong&gt;&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.&lt;/li&gt;
@@ -157,7 +169,66 @@ Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;
 
 &lt;h3 id="summarization"&gt;Summarization&lt;/h3&gt;
 
-&lt;p&gt;1&lt;/p&gt;</content:encoded></item><item><title>Bayes factors</title><description>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cost function - J(theta)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.07.59-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;J = (1/m) .* sum ( sum ((-yk) .* log(h_theta)  -  (1-yk) .* log(1-h_theta) )) + ...  
+    lambda ./ (2 * m)  .* (sum(sum(Theta1(:, 2:end) .* Theta1(:, 2:end))) + ...
+    sum(sum(Theta2(:, 2:end) .* Theta2(:, 2:end))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Forward propagation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-7.00.04-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Backward propagation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.20.34-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;The intuition behind the backward propagation can be described as: given dataset of training sample (Xt, Yt), we first calculate the activations of the whole neural network via forward propagation, including those for neural units in each hidden layer and of output value for h(theta). We then compute the error terms that reflect how much of that node was 'responsible' for any errors in our output. Concretely, for the output layer the error terms can be directly measured by subtracting actual value from network's activations. For the hidden units, the error terms in layer L can be computed based on weighted average of the error terms of the nodes in layer L + 1, that can be expressed as an equation that involves multiplication of matrix of theta, error terms of next layer and sigmoid gradient.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sigmoid gradient&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.15.56-PM-1.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Random initialization&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% Randomly initialize the weights to small values
+% epsilon_init = sqrt(6)/(sqrt(L_in) + sqrt(L_out))
+epsilon init = 0.12;  
+W = rand(L out, 1 + L in) * 2 * epsilon init − epsilon init;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Backward propagation implementation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.49.30-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;1) Use loop function over training samples and compute the activations for each layer, namely values of z and a. Note that an all-one term needs be added to the vectors of activations to include the bias unit in each layer. &lt;/p&gt;
+
+&lt;p&gt;2) Calculate the delta value(errors) for output layer by measuring the difference between the activation and true value. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.37.16-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;3) Calculate the error terms, namely the delta value, for hidden layer as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.40.31-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;4) Compute the accumulated gradient for given sample using the following formulas, where the delta2_0 is skipped or removed. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.45.06-PM.png" alt=""&gt;&lt;/p&gt;
+
+&lt;p&gt;5) The gradient for the neural network cost function can then be obtained by dividing the accumulated gradients by 1/m:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.46.51-PM.png" alt=""&gt;&lt;/p&gt;</content:encoded></item><item><title>Bayes factors</title><description>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;In statistics, the use of &lt;em&gt;Bayes factors&lt;/em&gt; is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/03/22/bayes-factors/</link><guid isPermaLink="false">64a43306-22f2-4caa-8042-979a0dcef444</guid><category>读书笔记</category><dc:creator>Dong Liang</dc:creator><pubDate>Wed, 22 Mar 2017 19:22:06 GMT</pubDate><content:encoded>&lt;p&gt;Quoted from Wikipedia&lt;/p&gt;
