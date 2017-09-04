@@ -1,5 +1,5 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.
-记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 05:06:46 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 16:13:43 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
 样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】&lt;/p&gt;
 
 &lt;p&gt;【内容数／样本／权重， 节点数／特征数】
@@ -13,7 +13,7 @@ J&lt;/p&gt;
 
 &lt;p&gt;Matrix 相乘： 内部行列数量守恒; 两个矩阵融合技术，以求得新的融合矩阵【样本，新特征】，将对象与特征相乘融合，其结果是前矩阵的特征通过后矩阵的权重合并转换 (被消除)， 转化为后矩阵的新特征。具体通过如下实现：位点内容由分别来自2个融合前矩阵的行（前节点数）与列（后内容数）的vector里的元素通过locatioin wise 相乘再累加而成&lt;/p&gt;
 
-&lt;p&gt;X： 401 features&lt;/p&gt;</description><link>http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/</link><guid isPermaLink="false">8557f4dd-55f7-485e-a9d4-b088a808cbf6</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 04:13:30 GMT</pubDate><content:encoded>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+&lt;p&gt;X： 401 features&lt;/p&gt;</description><link>http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/</link><guid isPermaLink="false">8557f4dd-55f7-485e-a9d4-b088a808cbf6</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 04:13:30 GMT</pubDate><media:content url="https://img.soydemac.com/wp-content/uploads/2015/09/inteligencia-artificial-apple.jpg" medium="image"/><content:encoded>&lt;img src="https://img.soydemac.com/wp-content/uploads/2015/09/inteligencia-artificial-apple.jpg" alt="关于深度学习的笔记"&gt;&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
 样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】&lt;/p&gt;
 
 &lt;p&gt;【内容数／样本／权重， 节点数／特征数】
@@ -43,44 +43,44 @@ Backpropagation: 计算每层的权重的斜率（gradient）。 并在fmincg �
 
 &lt;p&gt;第二层的权重的sigma = 第二层的权重 * 预测值与实际值的样本误 * 第二层的activation的斜率   δ(2) =  Θ(2) T δ(3). ∗ g′(z(2))
 第二层的权重的斜率（gradient）= 第二层的权重的sigma * 第二层的activation）／m
-第二层的权重矩阵： 【节点数2， 节点数3】或者【节点数3， 节点数2】&lt;/p&gt;</content:encoded></item><item><title>Workflow of ghost for updating posts on GitHub</title><description>&lt;h3 id="method1"&gt;Method 1&lt;/h3&gt;
+第二层的权重矩阵： 【节点数2， 节点数3】或者【节点数3， 节点数2】&lt;/p&gt;</content:encoded></item><item><title>Workflow of ghost for updating posts on GitHub</title><description>&lt;h2 id="updatingposts"&gt;Updating posts&lt;/h2&gt;
+
+&lt;h3 id="method1"&gt;Method 1&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Go into my ghost installation and:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;npm start  &lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;npm start  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Then go to &lt;a href="http://127.0.0.1:2368/ghost"&gt;http://127.0.0.1:2368/ghost&lt;/a&gt; and write a new post.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Then go into my static pages folder root (not into the static directory) and run under root privilege:&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;buster generate --domain=&lt;a href="http://127.0.0.1:2368"&gt;http://127.0.0.&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/09/03/workflow-of-ghost-for-updating-posts-on-github/</link><guid isPermaLink="false">171cde0e-f9d9-4c7b-8575-51c37f9fd360</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 03:53:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/09/images-7.jpeg" medium="image"/><content:encoded>&lt;h3 id="method1"&gt;Method 1&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;buster generate --domain=http://127.&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/2017/09/03/workflow-of-ghost-for-updating-posts-on-github/</link><guid isPermaLink="false">171cde0e-f9d9-4c7b-8575-51c37f9fd360</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 03:53:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/09/images-7.jpeg" medium="image"/><content:encoded>&lt;h2 id="updatingposts"&gt;Updating posts&lt;/h2&gt;
+
+&lt;h3 id="method1"&gt;Method 1&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Go into my ghost installation and:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;img src="http://localhost:2368/content/images/2017/09/images-7.jpeg" alt="Workflow of ghost for updating posts on GitHub"&gt;&lt;p&gt;npm start  &lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;npm start  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Then go to &lt;a href="http://127.0.0.1:2368/ghost"&gt;http://127.0.0.1:2368/ghost&lt;/a&gt; and write a new post.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="http://localhost:2368/content/images/2017/09/images-7.jpeg" alt="Workflow of ghost for updating posts on GitHub"&gt;&lt;p&gt;Then go to &lt;a href="http://127.0.0.1:2368/ghost"&gt;http://127.0.0.1:2368/ghost&lt;/a&gt; and write a new post.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Then go into my static pages folder root (not into the static directory) and run under root privilege:&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;buster generate --domain=&lt;a href="http://127.0.0.1:2368"&gt;http://127.0.0.1:2368&lt;/a&gt; &lt;br&gt;
-  cd static &lt;br&gt;
-  git add . &lt;br&gt;
-  git commit -m 'Initial commit' &lt;br&gt;
-  git push  &lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;buster generate --domain=http://127.0.0.1:2368  
+cd static  
+git add .  
+git commit -m 'Initial commit'  
+git push  
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Check site to see if it updated.&lt;/li&gt;
@@ -90,15 +90,19 @@ Backpropagation: 计算每层的权重的斜率（gradient）。 并在fmincg �
 
 &lt;h3 id="method2"&gt;Method 2&lt;/h3&gt;
 
-&lt;p&gt;cd ghost installation fold  &lt;/p&gt;
+&lt;p&gt;cd ghost installation fold&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;buster generate&lt;/p&gt;
-  
-  &lt;p&gt;buster deploy&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;buster generate  
+buster deploy  
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;source: &lt;a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/"&gt;https://stefanscherer.github.io/setup-ghost-for-github-pages/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Deep learning</title><description>&lt;p&gt;&lt;strong&gt;Matrix multiplication&lt;/strong&gt; : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;
+&lt;p&gt;source: &lt;a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/"&gt;https://stefanscherer.github.io/setup-ghost-for-github-pages/&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id="modifyingtheme"&gt;Modifying theme&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="https://help.ghost.org/hc/en-us/articles/225094848-Ghost-Theme-Editing"&gt;Basket&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Deep learning</title><description>&lt;p&gt;&lt;strong&gt;Matrix multiplication&lt;/strong&gt; : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Video embedded&lt;/strong&gt;&lt;/p&gt;
 
@@ -435,7 +439,7 @@ W = rand(L out, 1 + L in) * 2 * epsilon init − epsilon init;
 
 &lt;p&gt;Other variables include subject and acitvity that denote the sample ID and the recorded acitvities respectively. Please find detailed data transformation info in the README document. &lt;/p&gt;
 
-&lt;p&gt;&lt;img src="https://ghost.org/images/ghost-mobile-642x.png" alt=""&gt;&lt;/p&gt;</content:encoded></item><item><title>测试页面</title><description>&lt;p&gt;测试&lt;/p&gt;</description><link>http://localhost:2368/2017/03/19/ce-shi-ye-mian/</link><guid isPermaLink="false">59689540-a951-4a15-a42e-99a726a045fc</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 19 Mar 2017 20:11:49 GMT</pubDate><content:encoded>&lt;p&gt;测试&lt;/p&gt;</content:encoded></item><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>http://localhost:2368/2017/03/19/welcome-to-ghost/</link><guid isPermaLink="false">b56f35c8-f198-47f0-b922-56cb6c689528</guid><category>Getting Started</category><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 19 Mar 2017 08:00:11 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ghost.org/images/ghost-mobile-642x.png" alt=""&gt;&lt;/p&gt;</content:encoded></item><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>http://localhost:2368/2017/03/19/welcome-to-ghost/</link><guid isPermaLink="false">b56f35c8-f198-47f0-b922-56cb6c689528</guid><category>Getting Started</category><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 19 Mar 2017 08:00:11 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
 
 &lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
 
