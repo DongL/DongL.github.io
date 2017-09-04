@@ -1,14 +1,19 @@
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>关于深度学习的笔记</title>
+    <meta name="description" content="">
+
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../../../../assets/built/screen.css?v=bec5a163b2">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/screen.css?v=3e1ee80d02">
+
 
     <link rel="canonical" href="index.html">
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -65,7 +70,7 @@
 }
     </script>
 
-    <script type="text/javascript" src="../../../../shared/ghost-url.js?v=bec5a163b2"></script>
+    <script type="text/javascript" src="../../../../shared/ghost-url.js?v=3e1ee80d02"></script>
 <script type="text/javascript">
 ghost.init({
 	clientId: "ghost-frontend",
@@ -77,49 +82,47 @@ ghost.init({
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/github.min.css">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
 </head>
-<body class="post-template">
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home"><a href="../../../../">Home</a></li>
+            <li class="nav-machine-learning"><a href="../../../../tag/machine-learning/">Machine Learning</a></li>
+    </ul>
+        <a class="subscribe-button" href="../../../../subscribe/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
 
     <div class="site-wrapper">
 
         
 
-<header class="site-header outer">
-    <div class="inner">
-        <nav class="site-nav">
-    <div class="site-nav-left">
-                <a class="site-nav-logo" href="../../../../">Dong Liang's Blog</a>
-            <ul class="nav">
-    <li class="nav-home" role="presentation"><a href="../../../../">Home</a></li>
-    <li class="nav-machine-learning" role="presentation"><a href="../../../../tag/machine-learning/">Machine Learning</a></li>
-</ul>
-    </div>
-    <div class="site-nav-right">
-        <div class="social-links">
-        </div>
-            <a class="subscribe-button" href="index.html#subscribe">Subscribe</a>
-    </div>
-</nav>
-    </div>
+
+<header class="main-header post-head " style="background-image: url(https://img.soydemac.com/wp-content/uploads/2015/09/inteligencia-artificial-apple.jpg)">
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
 </header>
 
+<main class="content" role="main">
+    <article class="post">
 
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
+        <header class="post-header">
+            <h1 class="post-title">关于深度学习的笔记</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-09-03">03 September 2017</time> 
+            </section>
+        </header>
 
-        <article class="post-full post no-image">
-
-            <header class="post-full-header">
-                <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2017-09-03">3 September 2017</time>
-                </section>
-                <h1 class="post-full-title">关于深度学习的笔记</h1>
-            </header>
-
-
-            <section class="post-full-content">
-                <p>关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+        <section class="post-content">
+            <p>关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
 样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】</p>
 
 <p>【内容数／样本／权重， 节点数／特征数】
@@ -150,205 +153,81 @@ Backpropagation: 计算每层的权重的斜率（gradient）。 并在fmincg �
 <p>第二层的权重的sigma = 第二层的权重 * 预测值与实际值的样本误 * 第二层的activation的斜率   δ(2) =  Θ(2) T δ(3). ∗ g′(z(2))
 第二层的权重的斜率（gradient）= 第二层的权重的sigma * 第二层的activation）／m
 第二层的权重矩阵： 【节点数2， 节点数3】或者【节点数3， 节点数2】</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../../../../author/dong/">Dong Liang</a></h4>
+
+                    <p>Read <a href="../../../../author/dong/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
             </section>
 
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to Dong Liang's Blog</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                <form method="post" action="http://localhost:2368/subscribe/" class="">
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=%E5%85%B3%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0&amp;url=http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            <section class="gh-subscribe">
+                <h3 class="gh-subscribe-title">Subscribe to Dong Liang's Blog</h3>
+                <p>Get the latest posts delivered right to your inbox.</p>
+                <form method="post" action="../../../../subscribe/index.html" class="">
     <input class="confirm" type="hidden" name="confirm"><input class="location" type="hidden" name="location"><input class="referrer" type="hidden" name="referrer">
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" name="email" placeholder="youremail@example.com">
+        <input class="subscribe-email" type="email" name="email" placeholder="Your email address">
     </div>
     <button class="" type="submit">Subscribe</button>
     <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
 </form>
 
 
+                <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/http://localhost:2368/rss/">via RSS</a> with Feedly!</span>
             </section>
 
-            <footer class="post-full-footer">
+        </footer>
 
-                <section class="author-card">
-                    <section class="author-card-content">
-                        <h4 class="author-card-name"><a href="../../../../author/dong/">Dong Liang</a></h4>
-                            <p>Read <a href="../../../../author/dong/">more posts</a> by this author.</p>
-                    </section>
-                </section>
-                <div class="post-full-footer-right">
-                    <a class="author-card-button" href="../../../../author/dong/">Read More</a>
-                </div>
-
-            </footer>
-
-
-        </article>
-
-    </div>
+    </article>
 </main>
 
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-
-
-
-                <article class="post-card post featured no-image">
-    <div class="post-card-content">
-        <a class="post-card-content-link" href="../workflow-of-ghost-for-updating-posts-on-github/">
-            <header class="post-card-header">
-                <h2 class="post-card-title">Workflow of ghost for updating posts on GitHub</h2>
-            </header>
-            <section class="post-card-excerpt">
-                <p>Updating posts Method 1 Go into my ghost installation and: npm start   Then go to http://127.0.0.1:2368/ghost and write a new post. Then go into my static pages</p>
-            </section>
-        </a>
-        <footer class="post-card-meta">
-            <span class="post-card-author"><a href="../../../../author/dong/">Dong Liang</a></span>
-        </footer>
-    </div>
-</article>
-
-        </div>
-    </div>
+<aside class="read-next">
+    <a class="read-next-story prev " style="background-image: url(../../../../content/images/2017/09/images-7.jpeg)" href="../workflow-of-ghost-for-updating-posts-on-github/">
+        <section class="post">
+            <h2>Workflow of ghost for updating posts on GitHub</h2>
+            <p>Updating posts Method 1 Go into my ghost installation and: npm start   Then go to http://127.0.0.…</p>
+        </section>
+    </a>
 </aside>
 
-<div class="floating-header">
-    <div class="floating-header-logo">
-        <a href="../../../../">
-            <span>Dong Liang's Blog</span>
-        </a>
-    </div>
-    <span class="floating-header-divider">—</span>
-    <div class="floating-header-title">关于深度学习的笔记</div>
-    <div class="floating-header-share">
-        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
-</svg>
-</div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E5%85%B3%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%AC%94%E8%AE%B0&amp;url=http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
-        </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
-        </a>
-    </div>
-    <progress class="progress" value="0">
-        <div class="progress-container">
-            <span class="progress-bar"></span>
-        </div>
-    </progress>
-</div>
 
 
-
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="../../../../">Dong Liang's Blog</a> © 2017</section>
-                <nav class="site-footer-nav">
-                    <a href="../../../../">Latest Posts</a>
-                    
-                    
-                    <a href="https://ghost.org" target="_blank">Ghost</a>
-                </nav>
-            </div>
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="../../../../">Dong Liang's Blog</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
         </footer>
 
     </div>
 
-    <div id="subscribe" class="subscribe-overlay">
-        <a class="subscribe-overlay-close" href="index.html#"></a>
-        <div class="subscribe-overlay-content">
-            <h1 class="subscribe-overlay-title">Subscribe to Dong Liang's Blog</h1>
-            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-            <form method="post" action="http://localhost:2368/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"><input class="location" type="hidden" name="location"><input class="referrer" type="hidden" name="referrer">
-
-    <div class="form-group">
-        <input class="subscribe-email" type="email" name="email" placeholder="youremail@example.com">
-    </div>
-    <button class="" type="submit">Subscribe</button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
-</form>
-
-
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=bec5a163b2"></script>
-
-
-    <script>
-
-// NOTE: Scroll performance is poor in Safari
-// - this appears to be due to the events firing much more slowly in Safari.
-//   Dropping the scroll event and using only a raf loop results in smoother
-//   scrolling but continuous processing even when not scrolling
-$(document).ready(function () {
-    // Start fitVids
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-    // End fitVids
-
-    var progressBar = document.querySelector('progress');
-    var header = document.querySelector('.floating-header');
-    var title = document.querySelector('.post-full-title');
-
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = $(document).height();
-    var ticking = false;
-
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
-
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
-        requestTick();
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(update);
-        }
-        ticking = true;
-    }
-
-    function update() {
-        var trigger = title.getBoundingClientRect().top + window.scrollY;
-        var triggerOffset = title.offsetHeight + 35;
-        var progressMax = lastDocumentHeight - lastWindowHeight;
-
-        // show/hide floating header
-        if (lastScrollY >= trigger + triggerOffset) {
-            header.classList.add('floating-active');
-        } else {
-            header.classList.remove('floating-active');
-        }
-
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
-
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', onScroll, {passive: true});
-    window.addEventListener('resize', onResize, false);
-
-    update();
-});
-</script>
-
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/github.min.css">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="../../../../assets/js/jquery.fitvids.js?v=3e1ee80d02"></script>
+    <script type="text/javascript" src="../../../../assets/js/index.js?v=3e1ee80d02"></script>
 
 </body>
