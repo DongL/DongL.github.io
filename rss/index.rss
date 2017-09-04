@@ -1,5 +1,5 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.
-记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 04:54:26 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 05:06:46 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
 样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】&lt;/p&gt;
 
 &lt;p&gt;【内容数／样本／权重， 节点数／特征数】
