@@ -1,5 +1,5 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.
-记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 04:29:00 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 04:54:26 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
 样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】&lt;/p&gt;
 
 &lt;p&gt;【内容数／样本／权重， 节点数／特征数】
@@ -59,14 +59,14 @@ Backpropagation: 计算每层的权重的斜率（gradient）。 并在fmincg �
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;buster generate --domain=&lt;a href="http://127.0.0.1:2368"&gt;http://127.0.0.&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/09/03/workflow-of-ghost-for-updating-posts-on-github/</link><guid isPermaLink="false">171cde0e-f9d9-4c7b-8575-51c37f9fd360</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 03:53:59 GMT</pubDate><content:encoded>&lt;h3 id="method1"&gt;Method 1&lt;/h3&gt;
+  &lt;p&gt;buster generate --domain=&lt;a href="http://127.0.0.1:2368"&gt;http://127.0.0.&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><link>http://localhost:2368/2017/09/03/workflow-of-ghost-for-updating-posts-on-github/</link><guid isPermaLink="false">171cde0e-f9d9-4c7b-8575-51c37f9fd360</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 03:53:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/09/images-7.jpeg" medium="image"/><content:encoded>&lt;h3 id="method1"&gt;Method 1&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Go into my ghost installation and:&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;npm start  &lt;/p&gt;
+  &lt;img src="http://localhost:2368/content/images/2017/09/images-7.jpeg" alt="Workflow of ghost for updating posts on GitHub"&gt;&lt;p&gt;npm start  &lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
