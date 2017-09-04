@@ -1,4 +1,49 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 03 Sep 2017 03:58:53 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Workflow of ghost for updating posts on GitHub</title><description>&lt;ul&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.
+记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 02:33:51 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】&lt;/p&gt;
+
+&lt;p&gt;【内容数／样本／权重， 节点数／特征数】
+【sample, node】
+【weight, node】
+【node, weight】&lt;/p&gt;
+
+&lt;p&gt;m: sample &lt;br&gt;
+K : classification &lt;br&gt;
+J&lt;/p&gt;
+
+&lt;p&gt;Matrix 相乘： 内部行列数量守恒; 两个矩阵融合技术，以求得新的融合矩阵【样本，新特征】，将对象与特征相乘融合，其结果是前矩阵的特征通过后矩阵的权重合并转换 (被消除)， 转化为后矩阵的新特征。具体通过如下实现：位点内容由分别来自2个融合前矩阵的行（前节点数）与列（后内容数）的vector里的元素通过locatioin wise 相乘再累加而成&lt;/p&gt;
+
+&lt;p&gt;X： 401 features&lt;/p&gt;</description><link>http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/</link><guid isPermaLink="false">8557f4dd-55f7-485e-a9d4-b088a808cbf6</guid><dc:creator>Dong Liang</dc:creator><pubDate>Sun, 03 Sep 2017 04:13:30 GMT</pubDate><content:encoded>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】&lt;/p&gt;
+
+&lt;p&gt;【内容数／样本／权重， 节点数／特征数】
+【sample, node】
+【weight, node】
+【node, weight】&lt;/p&gt;
+
+&lt;p&gt;m: sample &lt;br&gt;
+K : classification &lt;br&gt;
+J&lt;/p&gt;
+
+&lt;p&gt;Matrix 相乘： 内部行列数量守恒; 两个矩阵融合技术，以求得新的融合矩阵【样本，新特征】，将对象与特征相乘融合，其结果是前矩阵的特征通过后矩阵的权重合并转换 (被消除)， 转化为后矩阵的新特征。具体通过如下实现：位点内容由分别来自2个融合前矩阵的行（前节点数）与列（后内容数）的vector里的元素通过locatioin wise 相乘再累加而成&lt;/p&gt;
+
+&lt;p&gt;X： 401 features (nodes) of 5000 samples &lt;br&gt;
+Theta1 : 25 nodes of 401 weights &lt;br&gt;
+z2: 26 features (nodes)of 5000 samples. &lt;br&gt;
+a2: activated 26 features of 5000 samples &lt;br&gt;
+H_theta = output of 10 weighted/activated features of 5000 samples&lt;/p&gt;
+
+&lt;p&gt;Cost function: 对每个样本的， 以10个最终归类为因子的假设方程 进行加权累加以求得综合的罚分结果。 该方程式采用了一个依赖于实际结果的二分类系统，这个结果是一个由0，1 构成的单列矩阵，用以表示该结果在分类标签中所属的位置。&lt;/p&gt;
+
+&lt;p&gt;Regularized item: 对每个层中的每个Node的每个权重进行平方加和， bias item - 通常为常量1且为权重矩阵中的第一个列项， &lt;br&gt;
+是不需要regularized,需要被剔除&lt;/p&gt;
+
+&lt;p&gt;Forwardpropagation: 计算output的activation，即预测值， 以及相应的代价。 &lt;br&gt;
+Backpropagation: 计算每层的权重的斜率（gradient）。 并在fmincg 运算下不断计算出每个层中Node的一套Theta值， 以便重新代入cost方程中求得最小代价， 也即是局部最小值。这就构成了training的过程&lt;/p&gt;
+
+&lt;p&gt;第二层的权重的sigma = 第二层的权重 * 预测值与实际值的样本误 * 第二层的activation的斜率   δ(2) =  Θ(2) T δ(3). ∗ g′(z(2))
+第二层的权重的斜率（gradient）= 第二层的权重的sigma * 第二层的activation）／m
+第二层的权重矩阵： 【节点数2， 节点数3】或者【节点数3， 节点数2】&lt;/p&gt;</content:encoded></item><item><title>Workflow of ghost for updating posts on GitHub</title><description>&lt;ul&gt;
 &lt;li&gt;Go into my ghost installation and:&lt;/li&gt;
 &lt;/ul&gt;
 
