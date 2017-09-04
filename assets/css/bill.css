@@ -1,0 +1,31 @@
+/*
+ * Bootstrap Bill theme by Mads Obel
+ * http://madsobel.com
+ * Released under the GNU GENERAL PUBLIC LICENSE V3
+*/
+
+/* Import Twitter Bootstrap */
+
+@import url("bootstrap.css"); 
+
+
+/* Push page content down */
+
+body {
+	padding-top: 25px;
+	background-color: #dddddd;
+}
+
+/* Custom Post Title styling */
+
+.bill-post-title {
+	font-family: "Arvo";
+	margin: 0;
+	color: #262626;
+}
+
+/* Adding margin to home icon */
+
+.home-icon {
+	margin-bottom: 25px;
+}
