@@ -1,5 +1,9 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Dong Liang's Blog</title><description>Thoughts, stories and ideas.
-记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 18:29:18 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+记录点滴灵感...</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Mon, 04 Sep 2017 21:08:25 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Python in deep leanring</title><description>&lt;p&gt;The &lt;code&gt;Pandas library&lt;/code&gt; is a functionally similar counterpart of R's dataframe or data.table in python programming environment. The underlying structure facilitate the data analysis and data.&lt;/p&gt;
+
+&lt;h4 id="broadcasting"&gt;Broadcasting&lt;/h4&gt;</description><link>http://localhost:2368/2017/09/04/python-in-deep-leanring/</link><guid isPermaLink="false">0f3d817c-a79e-4f2c-ba09-b41fbe13c591</guid><dc:creator>Dong Liang</dc:creator><pubDate>Mon, 04 Sep 2017 18:50:11 GMT</pubDate><content:encoded>&lt;p&gt;The &lt;code&gt;Pandas library&lt;/code&gt; is a functionally similar counterpart of R's dataframe or data.table in python programming environment. The underlying structure facilitate the data analysis and data.&lt;/p&gt;
+
+&lt;h4 id="broadcasting"&gt;Broadcasting&lt;/h4&gt;</content:encoded></item><item><title>关于深度学习的笔记</title><description>&lt;p&gt;关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
 样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】&lt;/p&gt;
 
 &lt;p&gt;【内容数／样本／权重， 节点数／特征数】
@@ -102,7 +106,9 @@ buster deploy
 
 &lt;h2 id="modifyingtheme"&gt;Modifying theme&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href="https://help.ghost.org/hc/en-us/articles/225094848-Ghost-Theme-Editing"&gt;Basket&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Deep learning</title><description>&lt;p&gt;&lt;strong&gt;Matrix multiplication&lt;/strong&gt; : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://help.ghost.org/hc/en-us/articles/225094848-Ghost-Theme-Editing"&gt;Basket&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://startbootstrap.com"&gt;Free Bootstrap Themes &amp;amp; Templates&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Deep learning</title><description>&lt;p&gt;&lt;strong&gt;Matrix multiplication&lt;/strong&gt; : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Video embedded&lt;/strong&gt;&lt;/p&gt;
 
