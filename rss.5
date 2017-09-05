@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Dong Liang's Blog]]></title><description><![CDATA[Thoughts, stories and ideas.
+记录点滴灵感...]]></description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Tue, 05 Sep 2017 02:09:41 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Python in deep leanring]]></title><description><![CDATA[<p>The <code>Pandas library</code> is a functionally similar counterpart of R's dataframe or data.table in python programming environment. The underlying structure facilitate the data analysis and data.</p>
+
+<h4 id="broadcasting">Broadcasting</h4>]]></description><link>http://localhost:2368/2017/09/04/python-in-deep-leanring/</link><guid isPermaLink="false">0f3d817c-a79e-4f2c-ba09-b41fbe13c591</guid><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Mon, 04 Sep 2017 18:50:11 GMT</pubDate><content:encoded><![CDATA[<p>The <code>Pandas library</code> is a functionally similar counterpart of R's dataframe or data.table in python programming environment. The underlying structure facilitate the data analysis and data.</p>
+
+<h4 id="broadcasting">Broadcasting</h4>]]></content:encoded></item><item><title><![CDATA[关于深度学习的笔记]]></title><description><![CDATA[<p>关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】</p>
+
+<p>【内容数／样本／权重， 节点数／特征数】
+【sample, node】
+【weight, node】
+【node, weight】</p>
+
+<p>m: sample <br>
+K : classification <br>
+J</p>
+
+<p>Matrix 相乘： 内部行列数量守恒; 两个矩阵融合技术，以求得新的融合矩阵【样本，新特征】，将对象与特征相乘融合，其结果是前矩阵的特征通过后矩阵的权重合并转换 (被消除)， 转化为后矩阵的新特征。具体通过如下实现：位点内容由分别来自2个融合前矩阵的行（前节点数）与列（后内容数）的vector里的元素通过locatioin wise 相乘再累加而成</p>
+
+<p>X： 401 features</p>]]></description><link>http://localhost:2368/2017/09/03/guan-yu-shen-du-xue-xi-de-bi-ji/</link><guid isPermaLink="false">8557f4dd-55f7-485e-a9d4-b088a808cbf6</guid><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Sun, 03 Sep 2017 04:13:30 GMT</pubDate><media:content url="https://img.soydemac.com/wp-content/uploads/2015/09/inteligencia-artificial-apple.jpg" medium="image"/><content:encoded><![CDATA[<img src="https://img.soydemac.com/wp-content/uploads/2015/09/inteligencia-artificial-apple.jpg" alt="关于深度学习的笔记"><p>关于层的权重： 权重以matrix形式出现， 其中以本层每个节点数作为行变量，以下一层节点数作为列变量。【node后, node前】
+样本：样本以matrix形式出现， 其中本层样本数作为行变量，以本层节点数作为列变量 【sample, node】</p>
+
+<p>【内容数／样本／权重， 节点数／特征数】
+【sample, node】
+【weight, node】
+【node, weight】</p>
+
+<p>m: sample <br>
+K : classification <br>
+J</p>
+
+<p>Matrix 相乘： 内部行列数量守恒; 两个矩阵融合技术，以求得新的融合矩阵【样本，新特征】，将对象与特征相乘融合，其结果是前矩阵的特征通过后矩阵的权重合并转换 (被消除)， 转化为后矩阵的新特征。具体通过如下实现：位点内容由分别来自2个融合前矩阵的行（前节点数）与列（后内容数）的vector里的元素通过locatioin wise 相乘再累加而成</p>
+
+<p>X： 401 features (nodes) of 5000 samples <br>
+Theta1 : 25 nodes of 401 weights <br>
+z2: 26 features (nodes)of 5000 samples. <br>
+a2: activated 26 features of 5000 samples <br>
+H_theta = output of 10 weighted/activated features of 5000 samples</p>
+
+<p>Cost function: 对每个样本的， 以10个最终归类为因子的假设方程 进行加权累加以求得综合的罚分结果。 该方程式采用了一个依赖于实际结果的二分类系统，这个结果是一个由0，1 构成的单列矩阵，用以表示该结果在分类标签中所属的位置。</p>
+
+<p>Regularized item: 对每个层中的每个Node的每个权重进行平方加和， bias item - 通常为常量1且为权重矩阵中的第一个列项， <br>
+是不需要regularized,需要被剔除</p>
+
+<p>Forwardpropagation: 计算output的activation，即预测值， 以及相应的代价。 <br>
+Backpropagation: 计算每层的权重的斜率（gradient）。 并在fmincg 运算下不断计算出每个层中Node的一套Theta值， 以便重新代入cost方程中求得最小代价， 也即是局部最小值。这就构成了training的过程</p>
+
+<p>第二层的权重的sigma = 第二层的权重 * 预测值与实际值的样本误 * 第二层的activation的斜率   δ(2) =  Θ(2) T δ(3). ∗ g′(z(2))
+第二层的权重的斜率（gradient）= 第二层的权重的sigma * 第二层的activation）／m
+第二层的权重矩阵： 【节点数2， 节点数3】或者【节点数3， 节点数2】</p>]]></content:encoded></item><item><title><![CDATA[Workflow of ghost for updating posts on GitHub]]></title><description><![CDATA[<h2 id="updatingposts">Updating posts</h2>
+
+<h3 id="method1">Method 1</h3>
+
+<ul>
+<li>Go into my ghost installation and:</li>
+</ul>
+
+<pre><code>npm start  
+</code></pre>
+
+<ul>
+<li><p>Then go to <a href="http://127.0.0.1:2368/ghost">http://127.0.0.1:2368/ghost</a> and write a new post.</p></li>
+<li><p>Then go into my static pages folder root (not into the static directory) and run under root privilege:</p></li>
+</ul>
+
+<pre><code>buster generate --domain=http://127.</code></pre>]]></description><link>http://localhost:2368/2017/09/03/workflow-of-ghost-for-updating-posts-on-github/</link><guid isPermaLink="false">171cde0e-f9d9-4c7b-8575-51c37f9fd360</guid><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Sun, 03 Sep 2017 03:53:00 GMT</pubDate><media:content url="http://localhost:2368/content/images/2017/09/images-7.jpeg" medium="image"/><content:encoded><![CDATA[<h2 id="updatingposts">Updating posts</h2>
+
+<h3 id="method1">Method 1</h3>
+
+<ul>
+<li>Go into my ghost installation and:</li>
+</ul>
+
+<pre><code>npm start  
+</code></pre>
+
+<ul>
+<li><img src="http://localhost:2368/content/images/2017/09/images-7.jpeg" alt="Workflow of ghost for updating posts on GitHub"><p>Then go to <a href="http://127.0.0.1:2368/ghost">http://127.0.0.1:2368/ghost</a> and write a new post.</p></li>
+<li><p>Then go into my static pages folder root (not into the static directory) and run under root privilege:</p></li>
+</ul>
+
+<pre><code>buster generate --domain=http://127.0.0.1:2368  
+cd static  
+git add .  
+git commit -m 'Initial commit'  
+git push  
+</code></pre>
+
+<ul>
+<li>Check site to see if it updated.</li>
+</ul>
+
+<p>source: <a href="http://briank.im/i-see-ghosts/">http://briank.im/i-see-ghosts/</a></p>
+
+<h3 id="method2">Method 2</h3>
+
+<p>cd ghost installation fold</p>
+
+<pre><code>buster generate  
+buster deploy  
+</code></pre>
+
+<p>source: <a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/">https://stefanscherer.github.io/setup-ghost-for-github-pages/</a></p>
+
+<hr>
+
+<h2 id="modifyingtheme">Modifying theme</h2>
+
+<p><a href="https://help.ghost.org/hc/en-us/articles/225094848-Ghost-Theme-Editing">Basket</a></p>
+
+<p><a href="https://startbootstrap.com">Free Bootstrap Themes &amp; Templates</a></p>]]></content:encoded></item><item><title><![CDATA[Deep learning]]></title><description><![CDATA[<p><strong>Matrix multiplication</strong> : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.</p>
+
+<p><strong>Computation graph</strong>
+:导数的链式连接方式： 代价函数在当前变量的偏微分等于代价函数在后一变量（也即当前函数的输出变量）</p>]]></description><link>http://localhost:2368/2017/09/03/untitled-2/</link><guid isPermaLink="false">f3f7801a-7689-4795-8e13-61593f344272</guid><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Sun, 03 Sep 2017 03:24:18 GMT</pubDate><content:encoded><![CDATA[<p><strong>Matrix multiplication</strong> : The inner product of matrix is an alternative to For loop: it concerns the process of element wise multiplication and addition of two one-dimentianal matrices. If the involved matrix is 2-dimentional, the process produces a stacked matrix that stores matrix-wise point multiplication results.</p>
+
+<p><strong>Computation graph</strong>
+:导数的链式连接方式： 代价函数在当前变量的偏微分等于代价函数在后一变量（也即当前函数的输出变量）的偏微分 * 当前函数对当前变量的偏微分。 </p>
+
+<pre><code>dL/db = dL/da * da/db  
+</code></pre>
+
+<p><strong>Random Initialization</strong> : 
+权重矩阵的全零值初始化会导致代价方程的在该矩阵求导过程中出现均值对称现象，也即每个接点对代价产生均质的影响。此外当隐藏层以sigmoid方程做为激活函数，应选择较小的权重初始值， 这会有利于代价方程求导前期的gradient不至于下降的过慢。</p>
+
+<p><strong>Video embedded</strong></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>]]></content:encoded></item><item><title><![CDATA[Machine learning week 3 - Logistic Regression]]></title><description><![CDATA[<h5 id="summarizethelessonlogisticregression"><strong>Summarize the lesson (Logistic Regression)</strong></h5>
+
+<ul>
+<li>Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.</li>
+<li>The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.</li></ul>]]></description><link>http://localhost:2368/2017/03/24/machine-learning-week-3-logistic-regression-2/</link><guid isPermaLink="false">84af78c4-942e-43ea-a27b-03bfe842ce84</guid><category><![CDATA[machine learning]]></category><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Fri, 24 Mar 2017 07:45:34 GMT</pubDate><content:encoded><![CDATA[<h5 id="summarizethelessonlogisticregression"><strong>Summarize the lesson (Logistic Regression)</strong></h5>
+
+<ul>
+<li>Logistic regression is an updated version of linear regression featuring constraint prediction values with the range of 0 to 1.</li>
+<li>The use of sigmoid or logistic function to represent logistic regression model benefits from quantifiable prediction results that are human interpretable and thus more intuitive.</li>
+<li>The decision boundary acquired by setting h(theta) to be zero aides the understanding of internal logistic classification that could be reflected as a visual boundary line or area on a 2-D plot.</li>
+<li>Because of the multi-optima/non-convex nature of logistic regression model that complicates the gradient descent processing, its cost function uses an alternative conditional algorithmic implementation other than the one for linear regression model.</li>
+<li>One may consider using advanced optimization algorithms (requiring inputs of J(theta) and gradient) and benefit from speedy and cost-efficient processing of parameter optimization.</li>
+<li>Multiple-class classification can be simplified as one vs all logistic regression classification that returns a probability that a given input x is categorized to certain class under each scenario.</li>
+</ul>]]></content:encoded></item><item><title><![CDATA[Machine learning week 5 - Neural Networks: Learning]]></title><description><![CDATA[<h3 id="costfunction">Cost Function</h3>
+
+<p><strong>Neural network model</strong>
+<img src="http://7d9rd6.com1.z0.glb.clouddn.com/wp-content/uploads/2016/04/scrn20160408215047.png" alt="neural network"></p>
+
+<p>Let's first define a few variables that we will need to use:</p>
+
+<ul>
+<li>L = total number of layers in the network</li>
+<li>sl = number of units (not counting bias unit) in layer l</li>
+<li>K = number of output units/classes</li>
+</ul>
+
+<p><mark><strong>Cost function</strong></mark></p>
+
+<p><img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-24-at-1.54.34-AM.png" alt="cost function"></p>
+
+<p><strong><em>Note:</em></strong></p>
+
+<ul>
+<li>the double sum simply adds</li></ul>]]></description><link>http://localhost:2368/2017/03/24/machine-learning-week-5-neural-networks-learning-2/</link><guid isPermaLink="false">b5bfcae8-169d-42f7-af26-3d0162d7654b</guid><category><![CDATA[machine learning]]></category><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Fri, 24 Mar 2017 07:41:30 GMT</pubDate><content:encoded><![CDATA[<h3 id="costfunction">Cost Function</h3>
+
+<p><strong>Neural network model</strong>
+<img src="http://7d9rd6.com1.z0.glb.clouddn.com/wp-content/uploads/2016/04/scrn20160408215047.png" alt="neural network"></p>
+
+<p>Let's first define a few variables that we will need to use:</p>
+
+<ul>
+<li>L = total number of layers in the network</li>
+<li>sl = number of units (not counting bias unit) in layer l</li>
+<li>K = number of output units/classes</li>
+</ul>
+
+<p><mark><strong>Cost function</strong></mark></p>
+
+<p><img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-24-at-1.54.34-AM.png" alt="cost function"></p>
+
+<p><strong><em>Note:</em></strong></p>
+
+<ul>
+<li>the double sum simply adds up the logistic regression costs calculated for each cell in the output layer</li>
+<li>the triple sum simply adds up the squares of all the individual Θs in the entire network.</li>
+<li>the i in the triple sum does not refer to training example i</li>
+</ul>
+
+<hr>
+
+<h3 id="backpropagationalgorithm">Backpropagation Algorithm</h3>
+
+<blockquote>
+  <p>"Backpropagation" is neural-network terminology for minimizing our cost function. The goal of Backpropagation is to minimize J(theta) - the cost function of NN, using an optimal set of parameters in theta: namely minΘJ(Θ).</p>
+</blockquote>
+
+<p><strong>Backpropagation Intuition</strong></p>
+
+<p><img src="http://localhost:2368/content/images/2017/03/Screen-Shot-2017-03-31-at-3.35.53-PM.png" alt=""></p>
+
+<p><em>*The δ(l)j is the error for a(l)j, expressed as the derivative of the cost function.The derivative is the slope of a line tangent to the cost fucntion, so the steeper the slope the more incorrect we are. *</em></p>
+
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/qc309rdcEea4MxKdJPaTxA_324034f1a3c3a3be8e7c6cfca90d3445_fixx.png?expiry=1491091200000&amp;hmac=xP_kro6Z8DjXgkDS6Fldh99xn4GgBdcP0ffsNj7UUMs" alt=""></p>
+
+<p>In the image above, to calculate δ(2)2, we multiply the weights Θ(2)12 and Θ(2)22 by their respective δ values found to the right of each edge. So we get δ(2)2= Θ(2)12<em>δ(3)1+Θ(2)22</em>δ(3)2. To calculate every single possible δ(l)j, we could start from the right of our diagram. We can think of our edges as our Θij. Going from right to left, to calculate the value of δ(l)j, you can just take the over all sum of each weight times the δ it is coming from. Hence, another example would be δ(3)2=Θ(3)12*δ(4)1.</p>
+
+<hr>
+
+<h3 id="unrollingparameters">Unrolling Parameters</h3>
+
+<ul>
+<li>It becomes more convenient when the theta or gradient parameters are packed into a bigger matrix, facilitating the vectorized operations. </li>
+<li>Unrolling matrix of parameters and putting them into one long vector before using the optimizing function such as fminunc(). </li>
+</ul>
+
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/kdK7ubT2EeajLxLfjQiSjg_d35545b8d6b6940e8577b5a8d75c8657_Screenshot-2016-11-27-15.09.24.png?expiry=1491004800000&amp;hmac=qh2Gn1mRQ-khB5O2476dP0dkmXPypNn46ODoxmTmvHM" alt=""></p>
+
+<hr>
+
+<h3 id="gradientchecking">Gradient Checking</h3>
+
+<p>Gradient Checking is designed to ensure that the deltaVector function works as intended. We can approximate the derivative of the cost function J(theta). </p>
+
+<p>The approximation can be implemented by adding or subtracting epsilon to the theta matrix, as shown in octave codes as follows:</p>
+
+<pre><code>epsilon = 1e-4;  
+for i = 1:n,  
+  thetaPlus = theta;
+  thetaPlus(i) += epsilon;
+  thetaMinus = theta;
+  thetaMinus(i) -= epsilon;
+  gradApprox(i) = (J(thetaPlus) - J(thetaMinus))/(2*epsilon)
+end;  
+</code></pre>
+
+<hr>
+
+<h3 id="randominitialization">Random Initialization</h3>
+
+<p>The use of all-zero matrix for parameters initialization would result in repeated updating to the same values in all nodes during backpropagation. Random initialization of weights for theta matrix circumvent the problem of symmetry breaking.</p>
+
+<p>Initializing weights with zeros for theta matrix doesn't work with neural network. When we backpropogate, the optimal values will update to the same values for all nodes. </p>
+
+<p>Briefly, we initialize each theta with a random value between [-epsilon , epsilon]. Using this formula guarantees that we get the desired bound. We can apply the same technique to multi-dimentional J(theta) matrix. </p>
+
+<pre><code>If the dimensions of Theta1 is 10x11, Theta2 is 10x11 and Theta3 is 1x11.
+
+Theta1 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+Theta2 = rand(10,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;  
+</code></pre>
+
+<hr>
+
+<h3 id="puttingittogether">Putting it Together</h3>
+
+<p>First, pick a network architecture; choose the layout of your neural network, including how many hidden units in each layer and how many layers in total you want to have.</p>
+
+<ul>
+<li>Number of input units = dimension of features x(i)</li>
+<li>Number of output units = number of classes</li>
+<li>Number of hidden units per layer = usually more the better (must balance with cost of computation as it increases with more hidden units)</li>
+<li>Defaults: 1 hidden layer. If you have more than 1 hidden layer, then it is recommended that you have the same number of units in every hidden layer.</li>
+</ul>
+
+<p><strong>Training a Neural Network</strong></p>
+
+<ol>
+<li>Randomly initialize the weights  </li>
+<li>Implement forward propagation to get hΘ(x(i)) for any x(i)  </li>
+<li>Implement the cost function  </li>
+<li>Implement backpropagation to compute partial derivatives  </li>
+<li>Use gradient checking to confirm that your backpropagation works. Then disable gradient checking.  </li>
+<li>Use gradient descent or a built-in optimization function to minimize the cost function with the weights in theta.</li>
+</ol>
+
+<pre><code>for i = 1:m,  
+   Perform forward propagation and backpropagation using example (x(i),y(i))
+   (Get activations a(l) and delta terms d(l) for l = 2,...,L
+</code></pre>
+
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/hGk18LsaEea7TQ6MHcgMPA_8de173808f362583eb39cdd0c89ef43e_Screen-Shot-2016-12-05-at-10.40.35-AM.png?expiry=1491091200000&amp;hmac=HbE_ZEpKeYD2TltrrYVU5OxTmXQd83nuso-WkozYsoM" alt=""></p>
+
+<p>The image shows an intuition of how gradient descent works as we are implementing our neural network. The gradient descent algorithm keeps iterating and exploring the data pool until it reaches a local minimum where hΘ(x(i)) ~= y(i). The optimization process, as the the cost function is not convex, could only result in local minimum instead getting to the global optimum, but it normally doesn't cause huge problem in practice.</p>
+
+<hr>
+
+<h3 id="summarization">Summarization</h3>
+
+<ul>
+<li>Cost function - J(theta)</li>
+</ul>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.07.59-PM-1.png" alt=""></p>
+
+<pre><code>J = (1/m) .* sum ( sum ((-yk) .* log(h_theta)  -  (1-yk) .* log(1-h_theta) )) + ...  
+    lambda ./ (2 * m)  .* (sum(sum(Theta1(:, 2:end) .* Theta1(:, 2:end))) + ...
+    sum(sum(Theta2(:, 2:end) .* Theta2(:, 2:end))))
+</code></pre>
+
+<ul>
+<li>Forward propagation</li>
+</ul>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-7.00.04-PM.png" alt=""></p>
+
+<ul>
+<li>Backward propagation</li>
+</ul>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.20.34-PM-1.png" alt=""></p>
+
+<p>The intuition behind the backward propagation can be described as: given dataset of training sample (Xt, Yt), we first calculate the activations of the whole neural network via forward propagation, including those for neural units in each hidden layer and of output value for h(theta). We then compute the error terms that reflect how much of that node was 'responsible' for any errors in our output. Concretely, for the output layer the error terms can be directly measured by subtracting actual value from network's activations. For the hidden units, the error terms in layer L can be computed based on weighted average of the error terms of the nodes in layer L + 1, that can be expressed as an equation that involves multiplication of matrix of theta, error terms of next layer and sigmoid gradient.</p>
+
+<p><em>Sigmoid gradient</em></p>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-3.15.56-PM-1.png" alt=""></p>
+
+<p><em>Random initialization</em></p>
+
+<pre><code>% Randomly initialize the weights to small values
+% epsilon_init = sqrt(6)/(sqrt(L_in) + sqrt(L_out))
+epsilon init = 0.12;  
+W = rand(L out, 1 + L in) * 2 * epsilon init − epsilon init;  
+</code></pre>
+
+<ul>
+<li>Backward propagation implementation</li>
+</ul>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.49.30-PM.png" alt=""></p>
+
+<p>1) Use loop function over training samples and compute the activations for each layer, namely values of z and a. Note that an all-one term needs be added to the vectors of activations to include the bias unit in each layer. </p>
+
+<p>2) Calculate the delta value(errors) for output layer by measuring the difference between the activation and true value. </p>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.37.16-PM.png" alt=""></p>
+
+<p>3) Calculate the error terms, namely the delta value, for hidden layer as follows:</p>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.40.31-PM.png" alt=""></p>
+
+<p>4) Compute the accumulated gradient for given sample using the following formulas, where the delta2_0 is skipped or removed. </p>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.45.06-PM.png" alt=""></p>
+
+<p>5) The gradient for the neural network cost function can then be obtained by dividing the accumulated gradients by 1/m:</p>
+
+<p><img src="http://localhost:2368/content/images/2017/04/Screen-Shot-2017-04-12-at-9.46.51-PM.png" alt=""></p>]]></content:encoded></item><item><title><![CDATA[Bayes factors]]></title><description><![CDATA[<p>Quoted from Wikipedia</p>
+
+<blockquote>
+  <p>In statistics, the use of <em>Bayes factors</em> is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify</p></blockquote>]]></description><link>http://localhost:2368/2017/03/22/bayes-factors/</link><guid isPermaLink="false">64a43306-22f2-4caa-8042-979a0dcef444</guid><category><![CDATA[读书笔记]]></category><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Wed, 22 Mar 2017 19:22:06 GMT</pubDate><content:encoded><![CDATA[<p>Quoted from Wikipedia</p>
+
+<blockquote>
+  <p>In statistics, the use of <em>Bayes factors</em> is a Bayesian alternative to classical hypothesis testing.[1][2] Bayesian model comparison is a method of model selection based on Bayes factors. The models under consideration are statistical models.[3] The aim of the Bayes factor is to quantify the support for a model over another, regardless of whether these models are correct.[4] The technical definition of "support" in the context of Bayesian inference is described below.</p>
+</blockquote>
+
+<p><a href="http://people.stat.sc.edu/Hitchcock/stat535slidesday20.pdf">The Bayes Factor</a></p>
+
+<p><a href="http://www.stat.cmu.edu/~kass/papers/bayesfactors.pdf">Applications</a> </p>]]></content:encoded></item><item><title><![CDATA[Code Book - Test page 2]]></title><description><![CDATA[<h1 id="codebook">Code Book</h1>
+
+<h2 id="datasource">Data Source</h2>
+
+<p>This code book is provided to  indicate all the variables and summaries calculated, along with units, and any other relevant information. The data used in this analysis was previously downloaded from the weblink as follows: <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" title="Smart phone dataset">Data source</a>. </p>
+
+<h2 id="datacollection">Data Collection</h2>
+
+<p>A group of 30 volunteers at ages</p>]]></description><link>http://localhost:2368/2017/03/19/code-book-test-page-2/</link><guid isPermaLink="false">2e1e7253-bcd0-49e4-a697-cbef7d1c3112</guid><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Sun, 19 Mar 2017 21:52:05 GMT</pubDate><content:encoded><![CDATA[<h1 id="codebook">Code Book</h1>
+
+<h2 id="datasource">Data Source</h2>
+
+<p>This code book is provided to  indicate all the variables and summaries calculated, along with units, and any other relevant information. The data used in this analysis was previously downloaded from the weblink as follows: <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" title="Smart phone dataset">Data source</a>. </p>
+
+<h2 id="datacollection">Data Collection</h2>
+
+<p>A group of 30 volunteers at ages ranging from 19 to 48 years old were enrolled in this video recorded experiment. Briefly, each individual was required to wear a Samsung Galaxy S II waist smartphone while performing six regular daily activities including WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING. At a constant rate of 50Hz, the 3-axial linear acceleration and 3-axial angular velocity were captured by Samsung smartphones using the embedded the accelerometer and gyroscope. The data were then manually labeled and according to the video recorded during the experiment. The final datasets were generated by randomly partitioning 70% of the volunteers into the training group and 30% of the rest into the test group. More info about the study can be retrieved from the <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" title="UCI machine learning repository">UCI machine learning repository</a></p>
+
+<h2 id="datasetinformation">Dataset Information</h2>
+
+<p>The raw dataset includes the following files:</p>
+
+<ul>
+<li><p>'README.txt'</p></li>
+<li><p>'features_info.txt': Shows information about the variables used on the feature vector.</p></li>
+<li><p>'features.txt': List of all features.</p></li>
+<li><p>'activity_labels.txt': Links the class labels with their activity name.</p></li>
+<li><p>'train/X_train.txt': Training set.</p></li>
+<li><p>'train/y_train.txt': Training labels.</p></li>
+<li><p>'test/X_test.txt': Test set.</p></li>
+<li><p>'test/y_test.txt': Test labels.</p></li>
+</ul>
+
+<p>The following files are available for the train and test data. Their descriptions are equivalent. </p>
+
+<ul>
+<li><p>'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. </p></li>
+<li><p>'train/Inertial Signals/total<em>acc</em>x<em>train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total</em>acc<em>x</em>train.txt' and 'total<em>acc</em>z_train.txt' files for the Y and Z axis. </p></li>
+<li><p>'train/Inertial Signals/body<em>acc</em>x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. </p></li>
+<li><p>'train/Inertial Signals/body<em>gyro</em>x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. </p></li>
+</ul>
+
+<h1 id="notes">Notes:  </h1>
+
+<ul>
+<li>Features are normalized and bounded within [-1,1].</li>
+<li>Each feature vector is a row on the text file.</li>
+</ul>
+
+<p>For more information about this dataset contact: activityrecognition@smartlab.ws</p>
+
+<h2 id="variablesandfeatureselection">Variables and Feature Selection</h2>
+
+<p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. </p>
+
+<p>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). </p>
+
+<p>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). </p>
+
+<p>These signals were used to estimate variables of the feature vector for each pattern: <br>
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.</p>
+
+<ul>
+<li>tBodyAcc-XYZ</li>
+<li>tGravityAcc-XYZ</li>
+<li>tBodyAccJerk-XYZ</li>
+<li>tBodyGyro-XYZ</li>
+<li>tBodyGyroJerk-XYZ</li>
+<li>tBodyAccMag</li>
+<li>tGravityAccMag</li>
+<li>tBodyAccJerkMag</li>
+<li>tBodyGyroMag</li>
+<li>tBodyGyroJerkMag</li>
+<li>fBodyAcc-XYZ</li>
+<li>fBodyAccJerk-XYZ</li>
+<li>fBodyGyro-XYZ</li>
+<li>fBodyAccMag</li>
+<li>fBodyAccJerkMag</li>
+<li>fBodyGyroMag</li>
+<li>fBodyGyroJerkMag</li>
+</ul>
+
+<p>The set of variables that were estimated from these signals are: <br>
+- mean(): Mean value
+- std(): Standard deviation</p>
+
+<blockquote>
+  <p>Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:</p>
+</blockquote>
+
+<ul>
+<li>gravityMean</li>
+<li>tBodyAccMean</li>
+<li>tBodyAccJerkMean</li>
+<li>tBodyGyroMean</li>
+<li>tBodyGyroJerkMean</li>
+</ul>
+
+<p>Other variables include subject and acitvity that denote the sample ID and the recorded acitvities respectively. Please find detailed data transformation info in the README document. </p>
+
+<p><img src="https://ghost.org/images/ghost-mobile-642x.png" alt=""></p>]]></content:encoded></item><item><title><![CDATA[Welcome to Ghost]]></title><description><![CDATA[<p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list</p>]]></description><link>http://localhost:2368/2017/03/19/welcome-to-ghost/</link><guid isPermaLink="false">b56f35c8-f198-47f0-b922-56cb6c689528</guid><category><![CDATA[Getting Started]]></category><dc:creator><![CDATA[Dong Liang]]></dc:creator><pubDate>Sun, 19 Mar 2017 08:00:11 GMT</pubDate><content:encoded><![CDATA[<p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!</p>
+
+<h2 id="gettingstarted">Getting Started</h2>
+
+<p>Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!</p>
+
+<p>Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use <em>shortcuts</em> to <strong>style</strong> your content. For example, a list:</p>
+
+<ul>
+<li>Item number one</li>
+<li>Item number two
+<ul><li>A nested item</li></ul></li>
+<li>A final item</li>
+</ul>
+
+<p>or with numbers!</p>
+
+<ol>
+<li>Remember to buy some milk  </li>
+<li>Drink the milk  </li>
+<li>Tweet that I remembered to buy the milk, and drank it</li>
+</ol>
+
+<h3 id="links">Links</h3>
+
+<p>Want to link to a source? No problem. If you paste in a URL, like <a href="http://ghost.org">http://ghost.org</a> - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to <a href="http://ghost.org">the Ghost website</a>. Neat.</p>
+
+<h3 id="whataboutimages">What about Images?</h3>
+
+<p>Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:</p>
+
+<p><img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo"></p>
+
+<p>Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:</p>
+
+<h3 id="quoting">Quoting</h3>
+
+<p>Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!</p>
+
+<blockquote>
+  <p>Ghost - Just a blogging platform</p>
+</blockquote>
+
+<h3 id="workingwithcode">Working with Code</h3>
+
+<p>Got a streak of geek? We've got you covered there, too. You can write inline <code>&lt;code&gt;</code> blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.</p>
+
+<pre><code>.awesome-thing {
+    display: block;
+    width: 100%;
+}
+</code></pre>
+
+<h3 id="readyforabreak">Ready for a Break?</h3>
+
+<p>Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.</p>
+
+<hr>
+
+<h3 id="advancedusage">Advanced Usage</h3>
+
+<p>There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.</p>
+
+<p><input type="text" placeholder="I'm an input field!"></p>
+
+<p>That should be enough to get you started. Have fun - and let us know what you think :)</p>]]></content:encoded></item></channel></rss>
